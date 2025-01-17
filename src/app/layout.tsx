@@ -6,6 +6,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import QueryProviders from "@/poviders/query-provider";
 
 const Exo2 = Exo_2({
   subsets: ["latin"],
@@ -68,7 +69,7 @@ export default function RootLayout({
       <body className={cn("text-base font-normal antialiased", Exo2.className)}>
         <Header />
         <main className="mx-auto max-w-screen-md px-4 py-6 md:max-w-screen-xl">
-          {children}
+          <QueryProviders>{children}</QueryProviders>
         </main>
         <Footer />
       </body>
