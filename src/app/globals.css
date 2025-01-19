@@ -33,6 +33,50 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    /* Pokemon Type Color */
+    --types-bug: #8CB230;
+    --types-dark: #58575F;
+    --types-dragon: #0F6AC0;
+    --types-electric: #eab308;
+    --types-fairy: #ED6EC7;
+    --types-fighting: #D04164;
+    --types-fire: #FD7D24;
+    --types-flying: #748FC9;
+    --types-ghost: #556AAE;
+    --types-grass: #62B957;
+    --types-ground: #DD7748;
+    --types-ice: #61CEC0;
+    --types-normal: #9DA0AA;
+    --types-poison: #A552CC;
+    --types-psychic: #EA5D60;
+    --types-rock: #BAAB82;
+    --types-steel: #417D9A;
+    --types-water: #4A90DA;
+    --types-stellar: #d1d1d1;
+    --types-unknown: #6FC996;
+
+    /* Pokemon Background Color */
+    --background-type-bug: #8BD674;
+    --background-type-dark: #6F6E78;
+    --background-type-dragon: #7383B9;
+    --background-type-electric: #F2CB55;
+    --background-type-fairy: #EBA8C3;
+    --background-type-fighting: #EB4971;
+    --background-type-fire: #FFA756;
+    --background-type-flying: #83A2E3;
+    --background-type-ghost: #8571BE;
+    --background-type-grass: #8BBE8A;
+    --background-type-ground: #F78551;
+    --background-type-ice: #91D8DF;
+    --background-type-normal: #B5B9C4;
+    --background-type-poison: #9F6E97;
+    --background-type-psychic: #FF6568;
+    --background-type-rock: #D4C294;
+    --background-type-steel: #4C91B2;
+    --background-type-water: #58ABF6;
+    --background-type-stellar: #4A90DA;
+    --background-type-unknown: #81E5AD;
   }
   .dark {
     --background: 0 0% 3.9%;
