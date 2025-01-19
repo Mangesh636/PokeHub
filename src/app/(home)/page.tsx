@@ -25,6 +25,8 @@ interface HomePageProps {
   url: string;
 }
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   const searchParams = useSearchParams();
   const [sortOption, setSortOption] = useState("");
