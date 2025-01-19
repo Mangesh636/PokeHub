@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
@@ -24,8 +24,6 @@ interface HomePageProps {
   name: string;
   url: string;
 }
-
-export const dynamic = 'force-dynamic'
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -134,68 +132,70 @@ export default function Home() {
     );
 
   return (
-    <section className="flex flex-col items-center gap-4">
-      <div className="flex w-full items-center justify-between py-4">
-        <Search />
-        <Filter onSortChange={(sort) => setSortOption(sort)} />
-      </div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {filteredPokemon?.map((pokemon) => (
-          <PokemonCard
-            key={pokemon.id}
-            height={pokemon.height}
-            id={pokemon.id}
-            sprites={pokemon.sprites}
-            name={pokemon.name}
-            types={pokemon.types}
-            weight={pokemon.weight}
-          />
-        ))}
-      </div>
-      <Pagination className="my-4">
-        <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious
-              href={`/?page=${Math.max(currentPage - 1, 1)}`}
-              aria-disabled={currentPage === 1}
+    <Suspense>
+      <section className="flex flex-col items-center gap-4">
+        <div className="flex w-full items-center justify-between py-4">
+          <Search />
+          <Filter onSortChange={(sort) => setSortOption(sort)} />
+        </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {filteredPokemon?.map((pokemon) => (
+            <PokemonCard
+              key={pokemon.id}
+              height={pokemon.height}
+              id={pokemon.id}
+              sprites={pokemon.sprites}
+              name={pokemon.name}
+              types={pokemon.types}
+              weight={pokemon.weight}
             />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink
-              href={
-                !isPlaceholderData && allPokemon
-                  ? `/?page=${currentPage + 1}`
-                  : "#"
-              }
-            >
-              {currentPage + 1}
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink
-              href={
-                !isPlaceholderData && allPokemon
-                  ? `/?page=${currentPage + 2}`
-                  : "#"
-              }
-            >
-              {currentPage + 2}
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext
-              href={
-                !isPlaceholderData && allPokemon
-                  ? `/?page=${currentPage + 1}`
-                  : "#"
-              }
-            />
-          </PaginationItem>
-        </PaginationContent>
-      </Pagination>
-    </section>
+          ))}
+        </div>
+        <Pagination className="my-4">
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                href={`/?page=${Math.max(currentPage - 1, 1)}`}
+                aria-disabled={currentPage === 1}
+              />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink
+                href={
+                  !isPlaceholderData && allPokemon
+                    ? `/?page=${currentPage + 1}`
+                    : "#"
+                }
+              >
+                {currentPage + 1}
+              </PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink
+                href={
+                  !isPlaceholderData && allPokemon
+                    ? `/?page=${currentPage + 2}`
+                    : "#"
+                }
+              >
+                {currentPage + 2}
+              </PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationEllipsis />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext
+                href={
+                  !isPlaceholderData && allPokemon
+                    ? `/?page=${currentPage + 1}`
+                    : "#"
+                }
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </section>
+    </Suspense>
   );
 }
