@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<br/>
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+<img height="200" src="public/logo.png" alt="PokeHub">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# PokéHub
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br/>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p>
+PokéHub is a community-driven platform that allows Pokémon enthusiasts to share, discover, and discuss their favorite Pokémon. Whether you&apos;re a seasoned trainer or just starting your journey, PokéHub provides a space for everyone to connect and explore the Pokémon universe.
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<br />
 
-## Learn More
+<a href="https://pok-e-hub.vercel.app/" target="_blank">Visit Now</a>
 
-To learn more about Next.js, take a look at the following resources:
+</div>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Features
 
-## Deploy on Vercel
+- **Browse Pokémon**: View a paginated list of Pokémon (100 per page).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Search Pokémon**: Instantly search through all available Pokémon by name.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Responsive Design**: A clean and responsive user interface for all devices.
+
+- **Optimized Performance**: Combines search and pagination using cached data to minimize API calls.
+
+- **Sorting Pokémon**: Sort Pokémon by Number(ID) or Name(alphabetically).
+
+- **Advanced Filtering**: Filter Pokémon using multiple criteria(Types, Ability, Habitats, Moves, Generations, Gender, Height & Weight).
+
+<br />
+
+# Tech Stack
+
+- **Frontend**
+
+  - **Next.JS**: React framework for server-side rendering and routing.
+
+  - **React Query**: For data fetching, caching, and synchronization.
+
+  - **Shadcn UI**: Pre-built, customizable components for a modern UI.
+
+  - **Tailwind CSS**: For styling and responsive design.
+
+  - **TypeScript**: Type-safe development.
+
+- **Backend**
+
+  - **Hono**: High-performance, lightweight framework for building APIs.
+
+  - **Axios**: For making HTTP requests.
+
+  - **PokéAPI**: RESTful API providing Pokémon data.
+
+<br />
+
+# How it Works
+
+1. **Data Fetching**: Pokémon data is fetched from PokéAPI via a Hono backend server.
+   The backend consolidates data for pagination, filtering, and sorting.
+
+2. **Pagination**: Displays 100 Pokémon per page using client-side pagination.
+
+3. **Search**: Users can search for Pokémon names. Results are filtered from the cached dataset for instant feedback.
+
+4. **Sorting**: Users can sort Pokémon by ID or Name.
+
+5. **Filtering**: Advanced filtering allows selection based on various criteria like types, abilities, and habitats.
+
+6. **Caching**: React Query caches Pokémon data for efficient re-fetching and performance.
+
+<br />
+
+# License
+
+This project is licensed under the MIT License.
+
+<br />
+
+<div align="center">
+
+# Acknowledgments
+
+<a href="https://pokeapi.co/" target="_blank">
+<img height="200" src="public/pokeapi.svg" alt="PokeHub">
+</a>
+
+## for Providing Pokémon data.
+
+</div>
