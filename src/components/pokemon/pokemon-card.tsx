@@ -32,6 +32,11 @@ export const PokemonCard = ({
 
   const imageSrc = officialArtwork || homeSprite || frontDefault;
 
+  // Do not render pokemon card if there is not sprite
+  if (!imageSrc) {
+    return null
+  }
+
   const handlePokemonClick = () => {
     router.push(`/pokemon/${name.toLowerCase()}`);
   };
