@@ -76,7 +76,8 @@ export const PokemonCard = ({
               fredoka.className,
             )}
           >
-            {name}
+            {/* Removing hyphen from name if any */}
+            {name.replace(/-/g, ' ')}
           </h2>
           <div className="mb-2 flex justify-around px-4">
             <div className="text-center">
