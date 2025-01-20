@@ -25,7 +25,7 @@ interface HomePageProps {
   url: string;
 }
 
-export default function PokemonHome() {
+export const PokemonHome = () => {
   const searchParams = useSearchParams();
   const [sortOption, setSortOption] = useState("");
 
@@ -158,42 +158,46 @@ export default function PokemonHome() {
               aria-disabled={currentPage === 1}
             />
           </PaginationItem>
-          <PaginationItem>
-            <PaginationLink
-              href={
-                !isPlaceholderData && allPokemon
-                  ? `/?page=${currentPage + 1}`
-                  : "#"
-              }
-            >
-              {currentPage + 1}
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink
-              href={
-                !isPlaceholderData && allPokemon
-                  ? `/?page=${currentPage + 2}`
-                  : "#"
-              }
-            >
-              {currentPage + 2}
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationNext
-              href={
-                !isPlaceholderData && allPokemon
-                  ? `/?page=${currentPage + 1}`
-                  : "#"
-              }
-            />
-          </PaginationItem>
+          {allPokemon && (allPokemon.length > 0) && (allPokemon.length === 100) && (
+              <>
+                <PaginationItem>
+                  <PaginationLink
+                    href={
+                      !isPlaceholderData && allPokemon
+                        ? `/?page=${currentPage + 1}`
+                        : "#"
+                    }
+                  >
+                    {currentPage + 1}
+                  </PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink
+                    href={
+                      !isPlaceholderData && allPokemon
+                        ? `/?page=${currentPage + 2}`
+                        : "#"
+                    }
+                  >
+                    {currentPage + 2}
+                  </PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationEllipsis />
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationNext
+                    href={
+                      !isPlaceholderData && allPokemon
+                        ? `/?page=${currentPage + 1}`
+                        : "#"
+                    }
+                  />
+                </PaginationItem>
+              </>
+            )}
         </PaginationContent>
       </Pagination>
     </section>
   );
-}
+};
